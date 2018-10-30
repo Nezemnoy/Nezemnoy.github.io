@@ -13,20 +13,20 @@
               var sendButton = document.getElementById("js_send");
 
               // validates email 
-              sendButton.onclick = validate;
+              sendButton.onclick = js_send;
               
-              function validate(form_id_js, email) {
-                var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-                var address = document.forms[form_id_js].elements[email].value;
-                if(reg.test(address) == false) {
-                   alert('Неверный формат адреса электронной почты!');
-                   document.forms[form_id_js].elements[email].value = "";
-                   setFocus();
-                   return false;
-                }
-                // sends address if e-mail is ok
-                else js_send();
-             }
+            //   function validate(form_id_js, email) {
+            //     var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+            //     var address = document.forms[form_id_js].elements[email].value;
+            //     if(reg.test(address) == false) {
+            //        alert('Неверный формат адреса электронной почты!');
+            //        document.forms[form_id_js].elements[email].value = "";
+            //        setFocus();
+            //        return false;
+            //     }
+            //     // sends address if e-mail is ok
+            //     else js_send();
+            //  }
 
                 //send e-mail via postmail
                 function js_send() {
@@ -81,10 +81,9 @@
                 document.getElementById("email").focus();
               }
 
-
-            //   var js_form = document.getElementById(form_id_js);
-            //   js_form.addEventListener("submit", function (e) {
-            //       e.preventDefault();
-            //   });
+              var js_form = document.getElementById(form_id_js);
+              js_form.addEventListener("submit", function (e) {
+                  e.preventDefault();
+              });
 
         

@@ -49,13 +49,16 @@
               <p class="mb-5">Мы работаем над созданием приложения, которое поможет вам подготовиться к собеседованию и получить Карту Поляка. Мы планируем, что приложение станет доступным в
                 <strong>Феврале 2019 года</strong>! Оставьте свой e-mail и мы вас проинформируем об этом!</p>
 
-             <form id = "javascript_form">
               <div class="input-group input-group-newsletter">
-                <input type="email" id="email" class="form-control" name="email" placeholder="Введите email..." aria-label="Введите email..." aria-describedby="basic-addon">
-                <button class="btn btn-secondary" id="js_send">Информировать меня!</button>
+                
+                <form id = "javascript_form">
+                   <input type="email" id="email" class="form-control" name="email" placeholder="Введите email..." aria-label="Введите email..." aria-describedby="basic-addon">
+                </form>
+                   <button class="btn btn-secondary" type = "submit" form = "javascript_form" id="js_send">Информировать меня!</button>
               </div>
-             </form>
              
+              <!-- onsubmit="return validate('javascript_form','email')" -->
+
             </div>
           </div>
         </div>
@@ -97,9 +100,6 @@
 
     <script src="mail.js"></script>
 
-    <!-- Script to validate e-mail -->
-
-    <script src="validate.js"></script>
 
   </body>
 
