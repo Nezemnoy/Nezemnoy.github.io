@@ -52,13 +52,10 @@
               <div class="input-group input-group-newsletter">
                 
                 <form id = "javascript_form">
-                   <input type="email" id="email" class="form-control" name="email" placeholder="Введите email..." aria-label="Введите email..." aria-describedby="basic-addon">
+                   <input type = "email" pattern="[^ @]*@[^ @]*" id="email" class="form-control" name="email" placeholder="Введите email..." aria-label="Введите email..." aria-describedby="basic-addon">
                 </form>
                    <button class="btn btn-secondary" type = "submit" form = "javascript_form" id="js_send">Информировать меня!</button>
               </div>
-             
-              <!-- onsubmit="return validate('javascript_form','email')" -->
-
             </div>
           </div>
         </div>

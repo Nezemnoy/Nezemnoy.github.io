@@ -1,6 +1,5 @@
 
              
-
               
               //update this with your js_form selector
               var form_id_js = "javascript_form";
@@ -30,9 +29,23 @@
 
                 //send e-mail via postmail
                 function js_send() {
+
+                    // var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+                    // var address = document.forms[form_id_js].elements[email].value;
+              
+                    // if(reg.test(address) == false) {
+                    //    alert('Неверный формат адреса электронной почты!');
+                    //    document.forms[form_id_js].elements[email].value = "";
+                    //    setFocus();
+                    //    return false;
+                    // } 
+
+                   // else {
+
                     sendButton.value='Sending…';
                     sendButton.disabled=true;
                     var request = new XMLHttpRequest();
+
                     request.onreadystatechange = function() {
                         if (request.readyState == 4 && request.status == 200) {
                             js_onSuccess();
@@ -54,6 +67,7 @@
                     request.send(params);
             
                     return false;
+                   // }
                 }
                 
               function js_onSuccess() {
