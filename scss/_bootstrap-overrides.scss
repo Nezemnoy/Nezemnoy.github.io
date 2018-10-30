@@ -12,3 +12,14 @@
 .input {
   font-weight: 300 !important;
 }
+
+.input-secondary {
+  background-color: $secondary;
+  border-color: $secondary;
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: darken($secondary, 10%) !important;
+    border-color: darken($secondary, 10%) !important;
+  }
+}
