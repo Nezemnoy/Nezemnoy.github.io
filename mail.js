@@ -29,18 +29,19 @@
 
                 //send e-mail via postmail
                 function js_send() {
-
-                    // var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-                    // var address = document.forms[form_id_js].elements[email].value;
+                
+                
+                    var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+                    var address = document.forms[form_id_js].elements[email].value;
               
-                    // if(reg.test(address) == false) {
-                    //    alert('Неверный формат адреса электронной почты!');
-                    //    document.forms[form_id_js].elements[email].value = "";
-                    //    setFocus();
-                    //    return false;
-                    // } 
+                    if(reg.test(address) == false) {
+                       alert('Неверный формат адреса электронной почты!');
+                      // document.forms[form_id_js].elements[email].value = "";
+                      // setFocus();
+                       return false;
+                    } 
 
-                   // else {
+                   else {
 
                     sendButton.value='Sending…';
                     sendButton.disabled=true;
@@ -53,8 +54,8 @@
                         if(request.readyState == 4) {
                             js_onError(request.response);
                         }
-                    };
-            
+                        }
+                    
                     var subject = document.querySelector("#" + form_id_js + " [name='email']").value;
                     var message = document.querySelector("#" + form_id_js + " [name='email']").value;
                     data_js['subject'] = subject;
@@ -67,7 +68,7 @@
                     request.send(params);
             
                     return false;
-                   // }
+                    }
                 }
                 
               function js_onSuccess() {
